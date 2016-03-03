@@ -16,6 +16,6 @@ _list = _display displayCtrl 2401;
 lbClear _list;
 _units = [];
 
-ctrlSetText[2404,"Verbindung herstellen..."];
+ctrlSetText[2404,"Connecting.."];
 
 [[player],"life_fnc_wantedFetch",false,false] spawn life_fnc_MP;

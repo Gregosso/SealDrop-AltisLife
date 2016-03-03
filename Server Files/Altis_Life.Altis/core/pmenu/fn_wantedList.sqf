@@ -26,9 +26,9 @@ _units = [];
 	};
 } foreach _info;
 
-ctrlSetText[2404,"Verbindung Hergestellt"];
+ctrlSetText[2404,"Connected"];
 
 if(((lbSize _list)-1) == -1) then
 {
-	_list lbAdd "Keine Anzeigen";
+	_list lbAdd "Empty";
 };

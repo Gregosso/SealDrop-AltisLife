@@ -5107,19 +5107,27 @@
 	</Package>
 		<Package name="Smartphone">
 		<Key ID="STR_PM_Smartphone">
-			<Original>Telefon</Original>
+			<Original>Cellphone</Original>
+			<English>Cellphone</English>
+			<German>Telefon</German>
 			<French>Téléphone</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_TITLE">
-			<Original>Telefon SMS</Original>
+			<Original>SMS</Original>
+			<English>SMS</English>
+			<German>SMS</German>
 			<French>Téléphone SMS</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_PLAYERLISTTITLE">
-			<Original>Spielerliste</Original>
+			<Original>Player List</Original>
+			<English>Player List</English>
+			<German>Spielerliste</German>
 			<French>Contact</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_MESSAGETITLE">
-			<Original>Nachrichten  | VON | WANN</Original>
+			<Original>Messages	| FROM | TIME</Original>
+			<English>Messages	| FROM | TIME</English>
+			<German>Nachrichten  | VON | WANN</German>
 			<French>Nouvelles  | FR | Quand</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_RANDOMTITLE">
@@ -5127,23 +5135,33 @@
 			<French>Sélectionnez un message à lire</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_SCHREIBEN">
-			<Original>Schreiben</Original>
+			<Original>Write</Original>
+			<English>Write</English>
+			<German>Schreiben</German>
 			<French>Rédiger</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_NOTRUF">
-			<Original>Notruf</Original>
+			<Original>Emergency</Original>
+			<English>Emergency</English>
+			<German>Notruf</German>
 			<French>Appel d'urgence</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_Absenden">
-			<Original>Absenden</Original>
+			<Original>Send</Original>
+			<English>Send</English>
+			<German>Absenden</German>
 			<French>Soumettre</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_NACHRICHTTITLE">
-			<Original>Nachricht an:</Original>
+			<Original>Message to:</Original>
+			<English>Message to:</English>
+			<German>Nachricht an:</German>
 			<French>Message à :</French>
 		</Key>
 		<Key ID="STR_SMARTPHONE_Notruftitle">
-			<Original>Kostenloser Notruf Dienst</Original>
+			<Original>Free emergency call</Original>
+			<English>Free emergency call</English>
+			<German>Kostenloser Notruf Dienst</German>
 			<French>Service d'urgence gratuit</French>
 		</Key>
 		<Key ID="STR_pInAct_RevokeLicense">
