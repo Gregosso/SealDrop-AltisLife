@@ -7,7 +7,7 @@
         <img src="https://img.shields.io/badge/arma3-1.56-red.svg" alt="ArmA 3" />
     </a>
     <a href="https://github.com/Torndeco/extDB2">
-        <img src="https://img.shields.io/badge/extDB2-70-yellow.svg" alt="extDB2 GitHub" />
+        <img src="https://img.shields.io/badge/extDB2-71-yellow.svg" alt="extDB2 GitHub" />
     </a>
     <a href="https://github.com/DeadP4xel/SealDrop-KotH">
         <img src="https://img.shields.io/badge/release-stable-orange.svg" alt="stable" />
