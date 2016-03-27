@@ -25,48 +25,47 @@ lbClear _list2;
 //lbSetData [_list2, _index, "pfad/zum/bild.paa"];
 //lbSetValue [_list2, _index, "pfad/zum/bild.paa"];
 
-_text = "Fahren ohne Fuehrerschein $15000";
+_text = "Driving without license $15000";
 _data = "1";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Versuchter Fahrzeug Diebstahl pro Versuch $10000";
+_text = "Try to steal a vehicle $10000";
 _data = "2";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Diebstahl von Fahrzeugen $20000";
+_text = "Vehicle steal $20000";
 _data = "3";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Fahren ohne Licht $1500";
+_text = "Driving without light $1500";
 _data = "4";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Ueberhoehte Geschwindigkeit $6000";
+_text = "Over the speed limit $6000";
 _data = "5";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Gefaehrliche Fahrweise $7500";
+_text = "Dangerous driving $7500";
 _data = "6";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Versuchter Diebstahl e. Polizeifahrzeugs $15000";
+_text = "Try to steal a police car $15000";
 _data = "7";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-_text = "Diebstahl von Polizeifahrzeugen $25000";
+_text = "Police vehicle steal $25000";
 _data = "8";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
 
-
-_text = "Landen ohne Genehmigung $20000";
+_text = "Landing without permission $20000";
 _data = "9";
 _list2 lbAdd format["%1 (%2)",_text,_data];
 _list2 lbSetData [(lbSize _list2)-1,_data];
