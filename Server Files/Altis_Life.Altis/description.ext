@@ -32,18 +32,7 @@ class Header
 };
 
 #include "dialog\MasterHandler.h"
-class CfgRemoteExec
-{
-  class Functions
-  {
-    mode = 0;
-    jip = 0;
-  };
-  class Commands
-  {
-  	mode=0;
-  };
-};
+
 class RscTitles
 {
 	#include "dialog\ui.hpp"
