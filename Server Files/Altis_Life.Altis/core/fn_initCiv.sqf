@@ -35,5 +35,8 @@ while {true} do
     };
 };
 
+// 
+[] call life_fnc_welcome;
+
 //Introcam
 [] spawn life_fnc_IntroCam;
