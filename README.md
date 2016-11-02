@@ -4,7 +4,7 @@
         <img src="https://img.shields.io/badge/version-3.1.4.8-blue.svg" alt="Changelog" />
     </a>
     <a href="https://arma3.com">
-        <img src="https://img.shields.io/badge/arma3-1.58-red.svg" alt="ArmA 3" />
+        <img src="https://img.shields.io/badge/arma3-1.64-red.svg" alt="ArmA 3" />
     </a>
     <a href="https://github.com/Torndeco/extDB2">
         <img src="https://img.shields.io/badge/extDB2-71-yellow.svg" alt="extDB2 GitHub" />
