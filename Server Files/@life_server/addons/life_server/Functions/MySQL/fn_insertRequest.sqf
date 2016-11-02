@@ -1,17 +1,19 @@
 /*
 	File: fn_insertRequest.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Does something with inserting... Don't have time for
 	descriptions... Need to write it...
 */
 private["_uid","_name","_side","_money","_bank","_licenses","_handler","_thread","_queryResult","_query","_alias"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_name = [_this,1,"",[""]] call BIS_fnc_param;
-_money = [_this,2,0,[""]] call BIS_fnc_param;
-_bank = [_this,3,2500,[""]] call BIS_fnc_param;
-_returnToSender = [_this,4,ObjNull,[ObjNull]] call BIS_fnc_param;
+params [
+    "_uid",
+    "_name",
+    ["_money",-1,[0]],
+    ["_bank",-1,[0]],
+    ["_returnToSender",objNull,[objNull]]
+];
 
 if((_uid isEqualTo "") OR (_name isEqualTo "")) exitWith {};
 if(isNull _returnToSender) exitWith {};
@@ -20,7 +22,7 @@ _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if(typeName _queryResult isEqualTo "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP};
+if(_queryResult isEqualType "") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP};
 if(count _queryResult != 0) exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP};
 
 _name = [_name] call DB_fnc_mresString;

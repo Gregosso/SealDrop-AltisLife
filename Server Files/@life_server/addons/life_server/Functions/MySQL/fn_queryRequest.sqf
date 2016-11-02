@@ -1,11 +1,11 @@
 /*
 	File: fn_queryRequest.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
-	Handles the incoming request and sends an asynchronous query 
+	Handles the incoming request and sends an asynchronous query
 	request to the database.
-	
+
 	Return:
 	ARRAY - If array has 0 elements it should be handled as an error in client-side files.
 	STRING - The request had invalid handles or an unknown error and is logged to the RPT.
@@ -26,11 +26,11 @@ _query = switch(_side) do {
 
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if(typeName _queryResult isEqualTo "STRING") exitWith {
+if (_queryResult isEqualType "") exitWith {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
-if(count _queryResult isEqualTo 0) exitWith {
+if (count _queryResult isEqualTo 0) exitWith {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
@@ -42,7 +42,7 @@ _queryResult set[3,[_tmp] call DB_fnc_numberSafe];
 
 //Parse licenses (Always index 6)
 _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
-if(typeName _new isEqualTo "STRING") then {_new = call compile format["%1", _new];};
+if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
 _queryResult set[6,_new];
 
 //Convert tinyint to boolean
@@ -56,14 +56,14 @@ for "_i" from 0 to (count _old)-1 do
 _queryResult set[6,_old];
 
 _new = [(_queryResult select 8)] call DB_fnc_mresToArray;
-if(typeName _new isEqualTo "STRING") then {_new = call compile format["%1", _new];};
+if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
 _queryResult set[8,_new];
 
 switch (_side) do {
 	case west: {
 		_queryResult set[9,([_queryResult select 9,1] call DB_fnc_bool)];
 	};
-	
+
 	case civilian: {
 		_queryResult set[7,([_queryResult select 7,1] call DB_fnc_bool)];
 		_houseData = _uid spawn TON_fnc_fetchPlayerHouses;

@@ -2,10 +2,10 @@
 /*
 	File: fn_requestReceived.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
-	Called by the server saying that we have a response so let's 
-	sort through the information, validate it and if all valid 
+	Called by the server saying that we have a response so let's
+	sort through the information, validate it and if all valid
 	set the client up.
 */
 life_session_tries = life_session_tries + 1;
@@ -15,12 +15,11 @@ if(life_session_tries > 3) exitWith {cutText[localize "STR_Session_Error","BLACK
 0 cutText [localize "STR_Session_Received","BLACK FADED"];
 0 cutFadeOut 9999999;
 
-//Error handling and  junk..
-if(isNil "_this") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if(typeName _this == "STRING") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if(count _this == 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if((_this select 0) == "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery;};
+if (isNil "_this") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
+if (_this isEqualType "") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
+if (count _this isEqualTo 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
+if ((_this select 0) isEqualTo "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
+if (!(getPlayerUID player isEqualTo (_this select 0))) exitWith {[] call SOCK_fnc_dataQuery;};
 
 //Lets make sure some vars are not set before hand.. If they are get rid of them, hopefully the engine purges past variables but meh who cares.
 if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "life_donator")) exitWith {
@@ -42,7 +41,7 @@ if(count (_this select 6) > 0) then {
 };
 
 life_gear = _this select 8;
-[] call life_fnc_loadGear;
+[true] call life_fnc_loadGear;
 
 //Parse side specific information.
 switch(playerSide) do {
@@ -51,7 +50,7 @@ switch(playerSide) do {
 		__CONST__(life_medicLevel,0);
 		life_blacklisted = _this select 9;
 	};
-	
+
 	case civilian: {
 		life_is_arrested = _this select 7;
 		__CONST__(life_coplevel, 0);
@@ -61,14 +60,14 @@ switch(playerSide) do {
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles pushBack _house;
 		} foreach life_houses;
-		
+
 		life_gangData = _This select 10;
 		if(count life_gangData != 0) then {
 			[] spawn life_fnc_initGang;
 		};
 		[] spawn life_fnc_initHouses;
 	};
-	
+
 	case independent: {
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_coplevel,0);
