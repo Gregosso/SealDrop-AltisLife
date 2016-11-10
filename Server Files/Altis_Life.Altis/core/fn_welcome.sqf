@@ -8,8 +8,6 @@
 */
 
 //Start erst nach Spawn
-waitUntil{!isNull (findDisplay 38500)};
-waitUntil{isNull (findDisplay 38500)};
 
 private ["_text","_intro"];
 
