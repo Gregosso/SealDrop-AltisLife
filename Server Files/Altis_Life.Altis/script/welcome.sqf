@@ -4,10 +4,6 @@
 	Date: 26.6.2014
 */
 
-//Start erst nach Spawn
-waitUntil{ !isNull(findDisplay 38500)};
-waitUntil{ isNull(findDisplay 38500)};
-
 //Sound
 playSound "welcome";
 
