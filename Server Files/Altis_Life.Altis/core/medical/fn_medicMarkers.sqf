@@ -3,13 +3,13 @@
 	Author: Bryan "Tonic" Boardwine
 	Edited by Timothy "TimmaE" Hladky
 
-	
+
 	Description:
 	Shows fellow Medics and Dead players that can be revived on the map when it's open.
-	
+
 	Change Color of Markers --> _marker setMarkerColorLocal "COLOR"; (ColorRed,ColorGreen,ColorBlue,ColorYellow, etc.) // for more get in 2D Editor
 	Change Icon for Markers --> _marker setMarkerTypeLocal "MARKERICON"; (loc_Hospital, Mil_dot, etc) // for more get in 2D Editor
-		
+
 */
 private["_markers2","_units"];
 _markers2 = [];
@@ -17,9 +17,9 @@ _units = [];
 {deleteMarkerLocal _x;} foreach _markers2;
 
 uiSleep 0.25;
-if(visibleMap) 
-	then 
-	
+if(visibleMap)
+	then
+
 {
 	{
 		_name = _x getVariable "name";
@@ -37,14 +37,14 @@ if(visibleMap)
 		_marker setMarkerTextLocal format["%1",(_x getVariable["name","Unknown Player"])];
 		_markers2 set[count _markers2,_marker];
 	} foreach _units;
-};		
+};
 private["_markers","_medics"];
 _markers = [];
 _medics = [];
 
 uiSleep 0.5;
 if(visibleMap) then {
-	{if(side _x == independent) then {_medics set[count _medics,_x];}} foreach playableUnits; //Fetch list of cops / blufor
+	{if(side _x == independent) then {_medics set[count _medics,_x];}} foreach allPlayers; //Fetch list of cops / blufor
 
 	//Create markers
 	{
@@ -78,4 +78,4 @@ if(visibleMap) then {
 	{deleteMarkerLocal _x;} foreach _markers2;
 	_markers = [];
 	_medics = [];
-}; 
+};

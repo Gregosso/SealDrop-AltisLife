@@ -1,7 +1,7 @@
 /*
 	File: fn_wantedFetch.sqf
 	Author: Bryan "Tonic" Boardwine"
-	
+
 	Description:
 	Displays wanted list information sent from the server.
 */
@@ -11,7 +11,7 @@ if(isNull _ret) exitWith {};
 
 _ret = owner _ret;
 _jailedUnits = [];
-{if(_x distance (getMarkerPos "jail_marker") < 120) then {_jailedUnits set[count _jailedUnits,getPlayerUID _x]}} forEach playableUnits;
+{if(_x distance (getMarkerPos "jail_marker") < 120) then {_jailedUnits set[count _jailedUnits,getPlayerUID _x]}} forEach allPlayers;
 
 _list = [];
 {

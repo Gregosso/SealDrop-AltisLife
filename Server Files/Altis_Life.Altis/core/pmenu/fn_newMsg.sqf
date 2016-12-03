@@ -1,9 +1,9 @@
 #include <macro.h>
 /*
-	
+
 	file: fn_newMsg.sqf
 	Author: Silex
-	
+
 */
 
 private["_to","_type","_playerData","_msg"];
@@ -35,14 +35,14 @@ switch(_type) do
 		ctrlShow[88885, false];
 		if(_msg == "") exitWith {hintSilent "You must enter a message to send!";ctrlShow[88885, true];};
 		[[life_smartphoneTarget,_msg,player,0],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
-		hintSilent format["You sent %1 a message: %2",name life_smartphoneTarget,_msg];	
+		hintSilent format["You sent %1 a message: %2",name life_smartphoneTarget,_msg];
 		ctrlShow[88885, true];
 		closeDialog 88883;
 	};
 	//copmessage
 	case 2:
 	{
-		if(({side _x == west} count playableUnits) == 0) exitWith {hintSilent format["Die Polizei ist derzeit nicht zu erreichen. Bitte versuchen Sie es später nochmal."];};
+		if(({side _x == west} count allPlayers) == 0) exitWith {hintSilent format["Die Polizei ist derzeit nicht zu erreichen. Bitte versuchen Sie es später nochmal."];};
 		ctrlShow[888895,false];
 		if(_msg == "") exitWith {hintSilent "You must enter a message to send!";ctrlShow[888895,true];};
 		[[ObjNull,_msg,player,1],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
@@ -65,7 +65,7 @@ switch(_type) do
 	//emsrequest
 	case 4:
 	{
-		if(({side _x == independent} count playableUnits) == 0) exitWith {hintSilent format["Zurzeit ist kein Arzt im Dienst. Bitte probiere es später nochmal."];};
+		if(({side _x == independent} count allPlayers) == 0) exitWith {hintSilent format["Zurzeit ist kein Arzt im Dienst. Bitte probiere es später nochmal."];};
 		ctrlShow[888899,false];
 		if(_msg == "") exitWith {hintSilent "You must enter a message to send!";ctrlShow[888899,true];};
 		[[ObjNull,_msg,player,3],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
@@ -107,7 +107,7 @@ switch(_type) do
 	//adacrequest
 	case 8:
 	{
-		if(({side _x == independent} count playableUnits) == 0) exitWith {hintSilent format["Zurzeit ist kein ADAC im Dienst. Bitte probiere es später nochmal."];};
+		if(({side _x == independent} count allPlayers) == 0) exitWith {hintSilent format["Zurzeit ist kein ADAC im Dienst. Bitte probiere es später nochmal."];};
 		ctrlShow[888900,false];
 		if(_msg == "") exitWith {hintSilent "You must enter a message to send!";ctrlShow[888900,true];};
 		[[ObjNull,_msg,player,6],"TON_fnc_handleMessages",false] spawn life_fnc_MP;

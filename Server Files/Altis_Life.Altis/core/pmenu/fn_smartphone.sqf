@@ -3,7 +3,7 @@
 
 	file: fn_smartphone.sqf
 	Author: Silex
-	
+
 */
 private["_display","_units","_type","_data","_rowData","_msg"];
 _type = [_this,0,0] call BIS_fnc_param;
@@ -35,8 +35,8 @@ switch(_type) do
 				_cPlayerList lbAdd format["%1 (%2)",_x getVariable["realname", name _x],_type];
 				_cPlayerList lbSetData [(lbSize _cPlayerList)-1,str(_x)];
 			};
-		} forEach playableUnits;
-		
+		} forEach allPlayers;
+
 		[[getPlayerUID player, player],"TON_fnc_msgRequest",false] spawn life_fnc_MP;
 		ctrlEnable[887892,false];
 	};

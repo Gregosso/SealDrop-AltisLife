@@ -47,7 +47,7 @@ life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_N
 
 serv_sv_use = [];
 
-fed_bank setVariable["safe",(count playableUnits),true];
+fed_bank setVariable["safe",(count allPlayers),true];
 
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect;false}];
 

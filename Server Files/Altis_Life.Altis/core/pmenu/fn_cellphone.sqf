@@ -2,7 +2,7 @@
 /*
 	File: fn_cellphone.sqf
 	Author: Alan
-	
+
 	Description:
 	Opens the cellphone menu?
 */
@@ -33,6 +33,6 @@ if((__GETC__(life_adminlevel) < 1)) then
 		_units lbAdd format["%1 (%2)",_x getVariable["realname",name _x],_type];
 		_units lbSetData [(lbSize _units)-1,str(_x)];
 	};
-} foreach playableUnits;
+} foreach allPlayers;
 
 lbSetCurSel [3004,0];

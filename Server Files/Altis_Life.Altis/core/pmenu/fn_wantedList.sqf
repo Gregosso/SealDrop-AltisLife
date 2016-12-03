@@ -3,7 +3,7 @@
 	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_wantedList.sqf
 	Author: Bryan "Tonic" Boardwine"
-	
+
 	Description:
 	Displays wanted list information sent from the server.
 */
@@ -15,7 +15,7 @@ _list = _display displayctrl 2401;
 _units = [];
 {
 	_units pushBack (_x getVariable["realname",name _x]);
-} foreach playableUnits;
+} foreach allPlayers;
 
 {
 	_entry = _x;

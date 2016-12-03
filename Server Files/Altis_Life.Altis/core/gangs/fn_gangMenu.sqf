@@ -1,7 +1,7 @@
 #include <macro.h>
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	31 hours of no uiSleep screw your description.
 */
@@ -42,7 +42,7 @@ lbClear _members;
 } foreach (units grpPlayer);
 
 _grpMembers = units grpPlayer;
-_allUnits = playableUnits;
+_allUnits = allPlayers;
 //Clear out the list..
 {
 	if(_x in _grpMembers OR side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {

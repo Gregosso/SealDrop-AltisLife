@@ -1,7 +1,7 @@
 /*
 	File: fn_keyMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Initializes the key menu
 	Will be revised.
@@ -17,7 +17,7 @@ _plist = _display displayCtrl 2702;
 lbClear _plist;
 _near_units = [];
 
-{ if(player distance _x < 20) then {_near_units pushBack _x};} foreach playableUnits;
+{ if(player distance _x < 20) then {_near_units pushBack _x};} foreach allPlayers;
 
 for "_i" from 0 to (count life_vehicles)-1 do
 {
@@ -30,7 +30,7 @@ for "_i" from 0 to (count life_vehicles)-1 do
 		{
 			_text = "";
 		};
-		
+
 		_name = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
 		_vehicles lbAdd format["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_text];

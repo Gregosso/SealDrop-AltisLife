@@ -2,7 +2,7 @@
 /*
 	File: fn_p_updateMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Updates the player menu (Virtual Interaction Menu)
 */
@@ -30,7 +30,7 @@ lbClear _near_i;
 
 //Near players
 _near_units = [];
-{ if(player distance _x < 10) then {_near_units pushBack _x};} foreach playableUnits;
+{ if(player distance _x < 10) then {_near_units pushBack _x};} foreach allPlayers;
 {
 	if(!isNull _x && alive _x && player distance _x < 10 && _x != player) then
 	{

@@ -24,6 +24,6 @@ _rscLayer cutRsc["osefStatusBar","PLAIN"];
 	{
 		uiSleep 1;
 		_counter = _counter - 1;
-		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["FPS: %1 | COPS: %2 | CIVS: %3 | MEDICS: %4 | MONEY: %5 | ATM: %6 | PLAYERS: %7", round diag_fps, west countSide playableUnits, civilian countSide playableUnits, independent countSide playableUnits,[life_cash] call life_fnc_numberText,[life_atmcash] call life_fnc_numberText, count playableUnits,_counter];
-	}; 
+		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["FPS: %1 | COPS: %2 | CIVS: %3 | MEDICS: %4 | MONEY: %5 | ATM: %6 | PLAYERS: %7", round diag_fps, west countSide allPlayers, civilian countSide allPlayers, independent countSide allPlayers,[life_cash] call life_fnc_numberText,[life_atmcash] call life_fnc_numberText, count allPlayers,_counter];
+	};
 };
